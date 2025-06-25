@@ -1,0 +1,21 @@
+@page "/error"
+@layout MainLayout
+
+<h1 class="text-danger">Something went wrong 😓</h1>
+
+<p class="lead">
+    An unexpected error has occurred.
+</p>
+
+@if (Error != null)
+{
+    <div class="alert alert-danger">
+        <p>@Error.Message</p>
+        <pre>@Error.StackTrace</pre>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public Exception? Error { get; set; }
+}
