@@ -17,17 +17,17 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '7.0.x'  # Change to '8.0.x' if you upgrade your project!
+        dotnet-version: '7.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore DotNetShowcase.Web/DotNetShowcase.Web.csproj
+      run: dotnet restore DotNetShowcase.Web.csproj
 
     - name: Build
-      run: dotnet build DotNetShowcase.Web/DotNetShowcase.Web.csproj --no-restore --configuration Release
+      run: dotnet build DotNetShowcase.Web.csproj --no-restore --configuration Release
 
     - name: Run tests (if any)
-      run: dotnet test DotNetShowcase.Web/DotNetShowcase.Web.csproj --no-build --verbosity normal || echo "No tests found"
+      run: dotnet test DotNetShowcase.Web.csproj --no-build --verbosity normal || echo "No tests found"
 
-    # Optional: Publish step (uncomment if you want to publish artifacts)
+    # Optional: Publish step (for deploying or for Blazor WASM GitHub Pages)
     # - name: Publish
-    #   run: dotnet publish DotNetShowcase.Web/DotNetShowcase.Web.csproj --configuration Release --output publish --no-build
+    #   run: dotnet publish DotNetShowcase.Web.csproj --configuration Release --output publish
