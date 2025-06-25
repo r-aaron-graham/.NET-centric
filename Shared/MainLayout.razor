@@ -1,0 +1,50 @@
+@inherits LayoutComponentBase
+
+<div class="page">
+    <header>
+        <h1>🧠 DotNet Showcase</h1>
+        <nav>
+            <a href="/">🏠 Home</a>
+            <a href="https://github.com/r-aaron-graham/dotnet-showcase" target="_blank">GitHub</a>
+        </nav>
+    </header>
+
+    <main>
+        @Body
+    </main>
+
+    <footer>
+        <p>© @DateTime.Now.Year · Built with Blazor</p>
+    </footer>
+</div>
+
+<style>
+    .page {
+        font-family: system-ui, sans-serif;
+        margin: 2rem;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+    }
+
+    nav a {
+        margin-right: 1rem;
+        text-decoration: none;
+        color: #0078D7;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    main {
+        margin-top: 2rem;
+    }
+
+    footer {
+        margin-top: 3rem;
+        font-size: 0.875rem;
+        color: #888;
+    }
+</style>
