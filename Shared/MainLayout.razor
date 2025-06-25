@@ -1,37 +1,47 @@
 @inherits LayoutComponentBase
 
 <div class="page">
-    <header>
+    <header role="banner">
         <h1>🧠 DotNet Showcase</h1>
-        <nav>
+        <nav role="navigation" aria-label="Main navigation">
             <a href="/">🏠 Home</a>
-            <a href="https://github.com/r-aaron-graham/dotnet-showcase" target="_blank">GitHub</a>
+            <a href="https://github.com/r-aaron-graham/dotnet-showcase" target="_blank" rel="noopener noreferrer">
+                GitHub 🔗
+            </a>
         </nav>
     </header>
 
-    <main>
+    <main role="main">
         @Body
     </main>
 
-    <footer>
-        <p>© @DateTime.Now.Year · Built with Blazor</p>
+    <footer role="contentinfo">
+        <p>© @DateTime.Now.Year · Built with ⚙️ Blazor Server</p>
     </footer>
 </div>
 
 <style>
     .page {
-        font-family: system-ui, sans-serif;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         margin: 2rem;
+        color: #333;
+    }
+
+    header {
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
 
     header h1 {
-        margin-bottom: 0;
+        margin: 0 0 0.5rem 0;
     }
 
     nav a {
         margin-right: 1rem;
         text-decoration: none;
         color: #0078D7;
+        font-weight: 500;
     }
 
     nav a:hover {
@@ -46,5 +56,7 @@
         margin-top: 3rem;
         font-size: 0.875rem;
         color: #888;
+        border-top: 1px solid #ddd;
+        padding-top: 1rem;
     }
 </style>
