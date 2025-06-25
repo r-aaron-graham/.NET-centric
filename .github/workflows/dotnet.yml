@@ -28,6 +28,6 @@ jobs:
     - name: Run tests (if any)
       run: dotnet test DotNetShowcase.Web/DotNetShowcase.Web.csproj --no-build --verbosity normal || echo "No tests found"
 
-    # Optional: Publish step (for deploying or for Blazor WASM GitHub Pages)
+    # Optional: Publish step (uncomment if you want to publish artifacts)
     # - name: Publish
     #   run: dotnet publish DotNetShowcase.Web/DotNetShowcase.Web.csproj --configuration Release --output publish --no-build
