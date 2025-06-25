@@ -1,0 +1,38 @@
+###############
+# .NET / C#   #
+###############
+
+# Build results
+bin/
+obj/
+publish/
+appsettings.Development.json
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.userprefs
+
+# VS Code
+.vscode/
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Logs / temp
+*.log
+*.tmp
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Docker build cache (optional)
+**/Dockerfile.*
+**/docker-compose*.yml
+
+# Secrets (if you use dotnet user-secrets)
+**/secrets.json
