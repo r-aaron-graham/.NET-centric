@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -18,13 +17,18 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '7.0.x'
+        dotnet-version: '7.0.x'  # Change to '8.0.x' if you upgrade your project!
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore DotNetShowcase.Web/DotNetShowcase.Web.csproj
 
     - name: Build
-      run: dotnet build --no-restore --configuration Release
+      run: dotnet build DotNetShowcase.Web/DotNetShowcase.Web.csproj --no-restore --configuration Release
 
-    - name: Run tests (if any)
-      run: dotnet test --no-build --verbosity normal || echo "No tests found"
+    # Uncomment the following section if/when you add unit tests
+    # - name: Run tests
+    #   run: dotnet test --no-build --verbosity normal
+
+    # Optional: Publish step (for deploying or for Blazor WASM GitHub Pages)
+    # - name: Publish
+    #   run: dotnet publish DotNetShowcase.Web/DotNetShowcase.Web.csproj --configuration Release --output publish --no-build
