@@ -1,0 +1,8 @@
+- name: Restore dependencies
+  run: dotnet restore src/MyApp/MyApp.csproj
+
+- name: Build
+  run: dotnet build --configuration Release src/MyApp/MyApp.csproj
+
+- name: Publish
+  run: dotnet publish --configuration Release --output publish src/MyApp/MyApp.csproj
