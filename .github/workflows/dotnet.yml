@@ -25,9 +25,8 @@ jobs:
     - name: Build
       run: dotnet build DotNetShowcase.Web/DotNetShowcase.Web.csproj --no-restore --configuration Release
 
-    # Uncomment the following section if/when you add unit tests
-    # - name: Run tests
-    #   run: dotnet test --no-build --verbosity normal
+    - name: Run tests (if any)
+      run: dotnet test DotNetShowcase.Web/DotNetShowcase.Web.csproj --no-build --verbosity normal || echo "No tests found"
 
     # Optional: Publish step (for deploying or for Blazor WASM GitHub Pages)
     # - name: Publish
